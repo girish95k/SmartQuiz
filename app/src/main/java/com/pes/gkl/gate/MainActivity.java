@@ -64,7 +64,7 @@ public class MainActivity extends MaterialNavigationDrawer {
         this.addSection(target);
         this.addSection(newSection("Topic-wise Performance", new PerformanceFragment()).setSectionColor(Color.GREEN));
         //this.addSection(newSection("Section",R.drawable.ic_arrow_drop_up_white_24dp,new TestFragment()).setSectionColor(Color.parseColor("#03a9f4")));
-        this.addSection(newSection("Take a saved test",new StoredFragment()).setSectionColor(Color.BLACK));
+        this.addSection(newSection("Take a Saved Test",new StoredFragment()).setSectionColor(Color.BLACK));
         enableToolbarElevation();
 
         //thread.start();
@@ -94,12 +94,14 @@ public class MainActivity extends MaterialNavigationDrawer {
 
     @Override
     public void onBackPressed() {
+        /*
         if(getFragmentManager().getBackStackEntryCount() == 0) {
             super.onBackPressed();
         }
         else {
             getFragmentManager().popBackStack();
         }
+        */
     }
     public boolean isResultFile(File f)
     {

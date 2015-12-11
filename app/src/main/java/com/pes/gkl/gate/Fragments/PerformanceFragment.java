@@ -93,57 +93,73 @@ public class PerformanceFragment extends Fragment implements OnChartGestureListe
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-        //Get collection
-        topicStats = new ArrayList<>();
-        Type resultType = new TypeToken<List<Integer>>() {}.getType();
-        try {
-            ArrayList<Integer> stats = Reservoir.get("stats" + "System Software and Operating System", resultType);
-            System.out.println(stats);
-            topicStats = stats;
-        } catch (Exception e) {
-            //failure
-            e.printStackTrace();
-            Log.e("failmax", "why?");
-        }
-
         View view = inflater.inflate(R.layout.fragment_performance, container, false);
+        topicStats = new ArrayList<>();
 
-        mChart = (LineChart) view.findViewById(R.id.chart1);
-        mChart.setDrawGridBackground(false);
+        String topics[] = {"System Software and Operating System", "Database Management Systems", "Data Structures", "Digital Electronics", "Computer Architecture "};
 
-        // no description text
-        mChart.setDescription("");
-        mChart.setNoDataTextDescription("You need to provide data for the chart.");
+        for(int i = 0; i<5; i++) {
 
-        // enable touch gestures
-        mChart.setTouchEnabled(true);
+            //Get collection
 
-        // enable scaling and dragging
-        mChart.setDragEnabled(true);
-        mChart.setScaleEnabled(true);
-        // mChart.setScaleXEnabled(true);
-        // mChart.setScaleYEnabled(true);
-
-        // if disabled, scaling can be done on x- and y-axis separately
-        mChart.setPinchZoom(true);
-
-        // set an alternative background color
-        // mChart.setBackgroundColor(Color.GRAY);
+            Type resultType = new TypeToken<List<Integer>>() {
+            }.getType();
+            try {
+                Log.e("topic: ", topics[i]);
+                ArrayList<Integer> stats = Reservoir.get("stats" + topics[i], resultType);
+                System.out.println(stats);
+                topicStats = stats;
+            } catch (Exception e) {
+                //failure
+                e.printStackTrace();
+                Log.e("failmax", "why?");
+            }
 
 
-        // x-axis limit line
-        LimitLine llXAxis = new LimitLine(10f, "Index 10");
-        llXAxis.setLineWidth(4f);
-        llXAxis.enableDashedLine(10f, 10f, 0f);
-        llXAxis.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_BOTTOM);
-        llXAxis.setTextSize(10f);
+            if(i==0)
+                mChart = (LineChart) view.findViewById(R.id.chart1);
+            if(i==1)
+                mChart = (LineChart) view.findViewById(R.id.chart2);
+            if(i==2)
+                mChart = (LineChart) view.findViewById(R.id.chart3);
+            if(i==3)
+                mChart = (LineChart) view.findViewById(R.id.chart4);
+            if(i==4)
+                mChart = (LineChart) view.findViewById(R.id.chart5);
+            mChart.setDrawGridBackground(false);
 
-        XAxis xAxis = mChart.getXAxis();
-        //xAxis.setValueFormatter(new MyCustomXAxisValueFormatter());
-        //xAxis.addLimitLine(llXAxis); // add x-axis limit line
+            // no description text
+            mChart.setDescription("");
+            mChart.setNoDataTextDescription("You need to provide data for the chart.");
 
-        Typeface tf = Typeface.createFromAsset(getActivity().getAssets(), "OpenSans-Regular.ttf");
+            // enable touch gestures
+            mChart.setTouchEnabled(true);
+
+            // enable scaling and dragging
+            mChart.setDragEnabled(true);
+            mChart.setScaleEnabled(true);
+            // mChart.setScaleXEnabled(true);
+            // mChart.setScaleYEnabled(true);
+
+            // if disabled, scaling can be done on x- and y-axis separately
+            mChart.setPinchZoom(true);
+
+            // set an alternative background color
+            // mChart.setBackgroundColor(Color.GRAY);
+
+
+            // x-axis limit line
+            LimitLine llXAxis = new LimitLine(10f, "Index 10");
+            llXAxis.setLineWidth(4f);
+            llXAxis.enableDashedLine(10f, 10f, 0f);
+            llXAxis.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_BOTTOM);
+            llXAxis.setTextSize(10f);
+
+            XAxis xAxis = mChart.getXAxis();
+            //xAxis.setValueFormatter(new MyCustomXAxisValueFormatter());
+            //xAxis.addLimitLine(llXAxis); // add x-axis limit line
+
+            Typeface tf = Typeface.createFromAsset(getActivity().getAssets(), "OpenSans-Regular.ttf");
 
         /*
         LimitLine ll1 = new LimitLine(130f, "Upper Limit");
@@ -163,40 +179,42 @@ public class PerformanceFragment extends Fragment implements OnChartGestureListe
         ll2.setTypeface(tf);
         */
 
-        YAxis leftAxis = mChart.getAxisLeft();
-        leftAxis.removeAllLimitLines(); // reset all limit lines to avoid overlapping lines
-        //leftAxis.addLimitLine(ll1);
-        //leftAxis.addLimitLine(ll2);
-        leftAxis.setAxisMaxValue(20f);
-        leftAxis.setAxisMinValue(0f);
-        leftAxis.setStartAtZero(true);
-        //leftAxis.setYOffset(20f);
-        leftAxis.enableGridDashedLine(10f, 10f, 0f);
+            YAxis leftAxis = mChart.getAxisLeft();
+            leftAxis.removeAllLimitLines(); // reset all limit lines to avoid overlapping lines
+            //leftAxis.addLimitLine(ll1);
+            //leftAxis.addLimitLine(ll2);
+            leftAxis.setAxisMaxValue(20f);
+            leftAxis.setAxisMinValue(0f);
+            leftAxis.setStartAtZero(true);
+            //leftAxis.setYOffset(20f);
+            leftAxis.enableGridDashedLine(10f, 10f, 0f);
 
-        // limit lines are drawn behind data (and not on top)
-        leftAxis.setDrawLimitLinesBehindData(true);
+            // limit lines are drawn behind data (and not on top)
+            leftAxis.setDrawLimitLinesBehindData(true);
 
-        mChart.getAxisRight().setEnabled(false);
+            mChart.getAxisRight().setEnabled(false);
 
-        //mChart.getViewPortHandler().setMaximumScaleY(2f);
-        //mChart.getViewPortHandler().setMaximumScaleX(2f);
+            //mChart.getViewPortHandler().setMaximumScaleY(2f);
+            //mChart.getViewPortHandler().setMaximumScaleX(2f);
 
-        // add data
-        setData(45, 100);
+            // add data
+            setData(45, 100);
 
 //        mChart.setVisibleXRange(20);
 //        mChart.setVisibleYRange(20f, AxisDependency.LEFT);
 //        mChart.centerViewTo(20, 50, AxisDependency.LEFT);
 
-        mChart.animateX(2500, Easing.EasingOption.EaseInOutQuart);
+            mChart.animateX(2500, Easing.EasingOption.EaseInOutQuart);
 //        mChart.invalidate();
 
-        // get the legend (only possible after setting data)
-        Legend l = mChart.getLegend();
+            // get the legend (only possible after setting data)
+            Legend l = mChart.getLegend();
 
-        // modify the legend ...
-        // l.setPosition(LegendPosition.LEFT_OF_CHART);
-        l.setForm(Legend.LegendForm.LINE);
+            // modify the legend ...
+            // l.setPosition(LegendPosition.LEFT_OF_CHART);
+            l.setForm(Legend.LegendForm.LINE);
+
+        }
 
         return view;
     }

@@ -3,26 +3,126 @@
     android:layout_height="match_parent"
     tools:context="com.pes.gkl.gate.Fragments.PerformanceFragment"
     android:layout_margin="15dp">
-
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="System Software and Operating System"
-        android:id="@+id/os"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/os"
-        android:background="#ffffff"
-        android:layout_marginTop="15dp">
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/chart1"
-
+        android:layout_height="match_parent">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp"/>
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="System Software and Operating System"
+                android:id="@+id/os"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/os"
+                android:background="#ffffff"
+                android:layout_marginTop="15dp"
+                android:id="@+id/one">
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart1"
 
-    </RelativeLayout>
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"/>
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DBMS"
+                android:id="@+id/dbms"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:layout_below="@id/one"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dbms"
+                android:background="#ffffff"
+                android:layout_marginTop="15dp"
+                android:id="@+id/two">
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart2"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data Structures"
+                android:id="@+id/ds"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:layout_below="@id/two"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ds"
+                android:background="#ffffff"
+                android:layout_marginTop="15dp"
+                android:id="@+id/three">
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart3"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Digital"
+                android:id="@+id/de"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:layout_below="@+id/three"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/de"
+                android:background="#ffffff"
+                android:layout_marginTop="15dp"
+                android:id="@+id/four">
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart4"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CAO"
+                android:id="@+id/coa"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:layout_below="@+id/four"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/coa"
+                android:background="#ffffff"
+                android:layout_marginTop="15dp">
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart5"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
