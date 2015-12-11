@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivityFragment">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EXIT"
+                android:id="@+id/submit"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                />
+            <Button
+                android:id="@+id/prev"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/next"
+                android:onClick="getNext"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_below="@+id/prev"
+                android:id='@+id/QuestionName'
+                android:text="QUESTION NAME"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/Answered"
+                android:layout_below="@+id/QuestionName"
+                android:gravity="center_horizontal"
+                android:text="You have not answered yet"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Answered"
+                android:id="@+id/solution"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+            <Button
+                android:id="@+id/reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:layout_alignParentRight="true"
+                android:layout_above="@+id/optionA"
+                android:layout_below="@+id/QuestionName"
+                />
+            <Button
+                android:layout_below="@+id/Answered"
+                android:id="@+id/optionA"
+                android:onClick="optionA"
+                android:layout_width="match_parent"
+                android:layout_height="100sp" />
+            <Button
+                android:layout_below="@+id/optionA"
+                android:id="@+id/optionB"
+                android:onClick="optionB"
+                android:layout_width="match_parent"
+                android:layout_height="100sp" />
+            <Button
+                android:layout_below="@+id/optionB"
+                android:id="@+id/optionC"
+                android:onClick="optionC"
+                android:layout_width="match_parent"
+                android:layout_height="100sp" />
+            <Button
+                android:layout_below="@+id/optionC"
+                android:id="@+id/optionD"
+                android:onClick="optionD"
+                android:layout_width="match_parent"
+                android:layout_height="100sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewstat"
+                android:layout_above="@+id/solution"
+                android:layout_toRightOf="@+id/Answered"
+                android:layout_alignTop="@+id/Answered"
+                android:layout_toLeftOf="@+id/reset"
+                android:layout_toStartOf="@+id/reset" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

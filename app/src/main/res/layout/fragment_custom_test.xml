@@ -1,0 +1,122 @@
+<com.gc.materialdesign.views.ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pes.gkl.gate.Fragments.CustomTestFragment"
+    android:layout_margin="15dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please select the number of questions you want from each topic."
+        android:gravity="center_horizontal"
+        android:id="@+id/info"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="System Software and Operating Systems"
+        android:id="@+id/os"
+        android:layout_below="@+id/info"
+        android:layout_marginTop="15dp"/>
+
+    <com.gc.materialdesign.views.Slider
+        android:id="@+id/slider1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E88E5"
+        materialdesign:max="20"
+        materialdesign:min="0"
+        materialdesign:showNumberIndicator="true"
+        android:layout_below="@+id/os"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Database Management Systems"
+        android:id="@+id/dbms"
+        android:layout_below="@+id/slider1"
+        android:layout_marginTop="10dp"/>
+
+    <com.gc.materialdesign.views.Slider
+        android:id="@+id/slider2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E88E5"
+        materialdesign:max="20"
+        materialdesign:min="0"
+        materialdesign:showNumberIndicator="true"
+        android:layout_below="@+id/dbms"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data Structures"
+        android:id="@+id/ds"
+        android:layout_below="@+id/slider2"
+        android:layout_marginTop="10dp"/>
+
+    <com.gc.materialdesign.views.Slider
+        android:id="@+id/slider3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E88E5"
+        materialdesign:max="20"
+        materialdesign:min="0"
+        materialdesign:showNumberIndicator="true"
+        android:layout_below="@+id/ds"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Digital Electronics"
+        android:id="@+id/digital"
+        android:layout_below="@+id/slider3"
+        android:layout_marginTop="10dp"/>
+
+    <com.gc.materialdesign.views.Slider
+        android:id="@+id/slider4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E88E5"
+        materialdesign:max="20"
+        materialdesign:min="0"
+        materialdesign:showNumberIndicator="true"
+        android:layout_below="@+id/digital"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Computer Architecture"
+        android:id="@+id/cao"
+        android:layout_below="@+id/slider4"
+        android:layout_marginTop="10dp"/>
+
+    <com.gc.materialdesign.views.Slider
+        android:id="@+id/slider5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E88E5"
+        materialdesign:max="20"
+        materialdesign:min="0"
+        materialdesign:showNumberIndicator="true"
+        android:layout_below="@+id/cao"/>
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E88E5"
+        android:text="OK"
+        android:layout_below="@+id/slider5"/>
+
+</RelativeLayout>
+</com.gc.materialdesign.views.ScrollView>
